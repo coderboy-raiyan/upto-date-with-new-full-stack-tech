@@ -1,5 +1,16 @@
+import { useEffect, useRef } from "react";
+
 function Home() {
-  return <div>Home</div>;
+  const inputRef = useRef();
+  useEffect(() => {
+    inputRef.current.focus();
+    console.log(inputRef.current);
+  }, []);
+  return (
+    <div>
+      <input type="text" ref={inputRef} />
+    </div>
+  );
 }
 
 export default Home;
