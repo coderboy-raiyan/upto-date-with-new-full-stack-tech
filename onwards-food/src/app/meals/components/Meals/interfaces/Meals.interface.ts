@@ -5,4 +5,6 @@ export type IMeals = {
   image: string;
   summary: string;
   creator: string;
+  instructions: string;
+  creator_email: string;
 };

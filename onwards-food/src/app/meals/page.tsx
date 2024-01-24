@@ -1,6 +1,14 @@
-import MealsGrid from "@/components/Meals/MealsGrid";
 import Link from "next/link";
+import { Suspense } from "react";
+import { getMeals } from "../../utils/meals";
+import MealsLoader from "./components/Loader/mealsLoader";
+import MealsGrid from "./components/Meals/MealsGrid";
 import styles from "./page.module.css";
+
+async function Meals() {
+  const meals = await getMeals();
+  return <MealsGrid meals={meals} />;
+}
 
 function MealsPage() {
   return (
@@ -18,7 +26,9 @@ function MealsPage() {
         </p>
       </header>
       <main className={styles.main}>
-        <MealsGrid meals={[]} />
+        <Suspense fallback={<MealsLoader />}>
+          <Meals />
+        </Suspense>
       </main>
     </>
   );
