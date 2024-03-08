@@ -1,6 +1,11 @@
-const input = document.querySelector<HTMLInputElement>(".input");
+type Options = {
+  debug?: boolean;
+};
 
-console.log(input?.value);
+function printPerson(person: { name: string }, obj: Options = {}) {
+  console.log(obj.debug);
+}
 
-const m = new Map<number, number>();
-m.set(1, 2);
+const person = { name: "kyle", age: 23 };
+
+printPerson(person);
