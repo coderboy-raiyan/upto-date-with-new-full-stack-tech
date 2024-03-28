@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.piano-container {
+  background-color: #143f6b;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.piano {
+  display: flex;
+}
+
+.key {
+  height: calc(var(--width) * 4);
+  width: var(--width);
+}
+
+.white {
+  --width: 100px;
+  background-color: white;
+  border: 1px solid #333;
+}
+
+.white.active {
+  background-color: #ccc;
+}
+
+.black {
+  --width: 60px;
+  background-color: black;
+  margin-left: calc(var(--width) / -2);
+  margin-right: calc(var(--width) / -2);
+  z-index: 2;
+}
+
+.black.active {
+  background-color: #333;
+}
+
+.keymap {
+  display: grid;
+  color: wheat;
+  font-size: 22px;
+  grid-template-columns: repeat(4, 1fr);
+  width: 50%;
+  text-align: center;
+  margin-bottom: 5px;
+  border: 2px solid #d0d2d6;
+}
+.keymap div {
+  border: 2px solid #d0d2d6;
+  padding: 10px;
+}
+
+.dev-credit {
+  text-align: center;
+  background: lightgreen;
+  padding: 10px;
+  color: black;
+  font-weight: 700;
+}
